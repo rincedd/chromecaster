@@ -1,6 +1,6 @@
-jest.dontMock('../index.js');
+jest.dontMock('../lib/chromecaster');
 
-import Chromecaster from '../index.js';
+const Chromecaster = require('../lib/chromecaster');
 
 describe('Chromecaster', function() {
     it('should be instantiatable', function() {

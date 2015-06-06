@@ -1,6 +1,8 @@
-jest.dontMock('../index.js');
+jest.dontMock('../lib/chromecaster');
 
-import Chromecaster from '../index';
+// NOTE that ES6 imports with jest-babel don't work with jest.dontMock()
+// @see https://github.com/babel/babel-jest/issues/16
+const Chromecaster = require('../lib/chromecaster');
 
 describe('Media loading', function() {
     let caster;
