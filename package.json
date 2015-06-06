@@ -1,7 +1,7 @@
 {
   "name": "chromecaster",
   "version": "0.0.0",
-  "description": "ES6 convenience wrapper around the Google Cast Chrome SDK",
+  "description": "ES6 convenience wrapper around the Google Cast Chrome API",
   "repository": "rincedd/chromecaster",
   "main": "index.js",
   "scripts": {
