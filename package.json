@@ -1,0 +1,12 @@
+{
+  "name": "chromecaster",
+  "version": "0.0.0",
+  "description": "ES6 convenience wrapper around the Google Cast Chrome SDK",
+  "repository": "rincedd/chromecaster",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gerd Zschaler <gzschaler@googlemail.com>",
+  "license": "MIT"
+}
