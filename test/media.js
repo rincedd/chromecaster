@@ -4,14 +4,14 @@ jest.dontMock('../lib/chromecaster');
 // @see https://github.com/babel/babel-jest/issues/16
 const Chromecaster = require('../lib/chromecaster');
 
-describe('Media loading', function() {
+describe('Media loading', () => {
     let caster;
 
     beforeEach(() => {
         caster = new Chromecaster();
     });
 
-    it('should return a promise', function() {
+    it('should return a promise', () => {
         expect(caster.loadMedia() instanceof Promise).toBe(true);
     });
 });
