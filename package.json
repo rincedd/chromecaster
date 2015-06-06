@@ -5,8 +5,16 @@
   "repository": "rincedd/chromecaster",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Gerd Zschaler <gzschaler@googlemail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-jest": "^5.2.0",
+    "jest-cli": "^0.4.5"
+  },
+  "jest": {
+    "testDirectoryName": "test",
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest"
+  }
 }
