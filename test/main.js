@@ -2,9 +2,14 @@ jest.dontMock('../index.js');
 
 import Chromecaster from '../index';
 
-describe('Chromecaster', function() {
-    it('should be instantiatable', function() {
-        let caster = new Chromecaster();
+describe('Media loading', function() {
+    let caster;
 
+    beforeEach(() => {
+        caster = new Chromecaster();
+    });
+
+    it('should return a promise', function() {
+        expect(caster.loadMedia() instanceof Promise).toBe(true);
     });
 });
