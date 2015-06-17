@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    webpack = require('gulp-webpack'),
+    webpack = require('webpack-stream'),
     del = require('del');
 
 var distDir = 'dist';
