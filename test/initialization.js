@@ -1,6 +1,5 @@
-jest.dontMock('../lib/chromecaster');
-
-const Chromecaster = require('../lib/chromecaster');
+import { expect } from 'chai';
+import Chromecaster from '../lib/chromecaster';
 
 describe('Chromecaster', () => {
     let caster;
@@ -10,11 +9,11 @@ describe('Chromecaster', () => {
     });
 
     it('should be instantiatable', () => {
-        expect(caster).not.toBeUndefined();
-        expect(caster instanceof Chromecaster).toBe(true);
+        expect(caster).to.exist;
+        expect(caster).to.be.an.instanceof(Chromecaster);
     });
 
     it('should not have an active cast session by default', () => {
-        expect(caster.isActive).toBe(false);
+        expect(caster.isActive).to.be.false;
     });
 });

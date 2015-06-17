@@ -1,0 +1,4 @@
+--require test/common
+--compilers js:mocha-babel
+--reporter dot
+--ui bdd

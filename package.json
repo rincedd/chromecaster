@@ -5,21 +5,22 @@
   "repository": "rincedd/chromecaster",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "mocha"
   },
   "author": "Gerd Zschaler <gzschaler@googlemail.com>",
   "license": "MIT",
   "devDependencies": {
+    "babel": "^5.5.8",
     "babel-jest": "^5.2.0",
     "babel-loader": "^5.1.4",
+    "babel-runtime": "^5.5.8",
+    "chai": "^3.0.0",
+    "chai-as-promised": "^5.1.0",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-webpack": "^1.5.0",
-    "jest-cli": "^0.4.5",
+    "mocha": "^2.2.5",
+    "mocha-babel": "^3.0.0",
     "webpack": "^1.9.10"
-  },
-  "jest": {
-    "testDirectoryName": "test",
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest"
   }
 }
