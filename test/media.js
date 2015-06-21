@@ -12,11 +12,21 @@ describe('Media loading', () => {
             addMediaListener: sinon.spy(),
             loadMedia: sinon.stub().callsArgWith(1, media)
         };
+        global.chrome = { cast: { media: { LoadRequest: sinon.spy() }}};
         manager = new MediaManager(session);
+    });
+
+    afterEach(() => {
+        global.chrome = undefined;
     });
 
     it('should return a promise', () => {
         expect(manager.loadMedia()).to.be.an.instanceof(Promise);
+    });
+
+    it('should call loadMedia on the cast session', function() {
+        manager.loadMedia();
+        expect(session.loadMedia).to.have.been.called;
     });
 
     describe('mediaLoaded event', () => {
