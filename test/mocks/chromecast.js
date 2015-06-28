@@ -8,7 +8,11 @@ let chrome = {
             IdleReason: {
                 FINISHED: 'finished',
                 INTERRUPTED: 'interrupted'
-            }
+            },
+            PlayRequest: sinon.spy(),
+            SeekRequest: sinon.spy(),
+            PauseRequest: sinon.spy(),
+            StopRequest: sinon.spy()
         }
     }
 };
