@@ -1,11 +1,16 @@
-import { expect } from 'chai';
 import Chromecaster from '../lib/chromecaster';
+import chrome from './mocks/chromecast';
 
 describe('Chromecaster', () => {
     let caster;
 
     beforeEach(() => {
+        global.chrome = chrome;
         caster = new Chromecaster();
+    });
+
+    afterEach(() => {
+        global.chrome = undefined;
     });
 
     it('should be instantiatable', () => {

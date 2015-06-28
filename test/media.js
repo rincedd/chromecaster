@@ -1,18 +1,21 @@
 import MediaManager from '../lib/mediamanager';
+import chrome from './mocks/chromecast';
 
 describe('Media loading', () => {
     let manager, session, media = {};
 
     beforeEach(() => {
         media = {
-            addUpdateListener: sinon.spy()
+            addUpdateListener: sinon.spy(),
+            removeUpdateListener: sinon.spy(),
+            getEstimatedTime: sinon.spy()
         };
         session = {
             media: [],
             addMediaListener: sinon.spy(),
             loadMedia: sinon.stub().callsArgWith(1, media)
         };
-        global.chrome = { cast: { media: { LoadRequest: sinon.spy() }}};
+        global.chrome = chrome;
         manager = new MediaManager(session);
     });
 
@@ -40,7 +43,7 @@ describe('Media loading', () => {
         it('should emit mediaLoaded on success', () => {
             let promise = manager.loadMedia();
             expect(listener).to.have.been.called;
-            return expect(promise).to.become(media);
+            return expect(promise).to.eventually.have.property('_media', media);
         });
 
         it('should not emit mediaLoaded event on failure', () => {
